@@ -1,0 +1,193 @@
+::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d8d8d8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(51, 51, 51);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 0, 0);
+}
+
+// * {
+//     user-select: none;
+//     transition: 1s;
+// }
+
+nav .nav-item {
+  font-family: arial;
+  margin-right: 16px;
+}
+
+i {
+  color: black;
+  margin-right: 4px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1em;
+  color: white;
+  border-bottom: none;
+}
+
+.menu {
+  display: flex;
+  //justify-content: space-between;
+  align-items: center;
+  position: relative;
+  //width: 500px;
+  height: 60px;
+  padding: 0 15px;
+  border-radius: 15px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    236deg,
+    rgba(98, 108, 93, 1) 0%,
+    rgba(77, 66, 81, 1) 100%
+  );
+  border: white 1px solid;
+  box-shadow: 5px 5px 10px white;
+}
+
+a:hover {
+  border-bottom: 1px solid white;
+  transition: 0.2s;
+  margin-bottom: 5px;
+}
+
+a:hover i {
+  color: lightgray;
+  transition: 0.6s;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: gray;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  font-family: arial;
+  padding: 12px 10px;
+  text-decoration: none;
+  display: block;
+  width: 200px;
+}
+
+.dropdown-content a:hover {
+  background-color: darkestgray;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.content {
+  padding-top: 5px;
+  font-size: 16px;
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  margin-top: 30vh;
+  background: #828282;
+  border-radius: 8px;
+  width: 50%;
+  position: relative;
+  transition: all 1s ease-in-out;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+
+.popup .close:hover {
+  transition: 0.3s;
+  color: red;
+}
+
+.popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 70%;
+  height: 30px;
+}
+
+.guide i {
+  color: white;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  font-size: 20px;
+}
+
+#popup2 {
+  font-family: arial;
+}
+
+@media (max-width: 905px) {
+  .menu {
+    height: 40px;
+    .dropdown-content a {
+      width: 100%;
+    }
+  }
+
+  nav .nav-item {
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  nav .nav-item {
+    margin-right: 4px;
+  }
+}

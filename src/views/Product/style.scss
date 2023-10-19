@@ -1,0 +1,271 @@
+body {
+  padding: 0 20px;
+}
+
+#product {
+  button {
+    cursor: pointer;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .product-list {
+    text-align: center;
+    margin: 24px 0;
+
+    .actions {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      input {
+        background-image: url(../../assets/search.svg);
+        background-repeat: no-repeat;
+        background-position: 90%;
+        background-size: 16px;
+        width: 100%;
+      }
+
+      input:not(:placeholder-shown) {
+        background-image: none;
+      }
+    }
+  }
+
+  main {
+    max-height: 524px;
+    overflow-y: auto;
+    margin-top: 8px;
+
+    .loading {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .show-products {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+
+      thead {
+        background: linear-gradient(to right, lightskyblue, silver);
+        position: sticky;
+        top: 0;
+      }
+
+      button {
+        //margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    td img {
+      height: 16px;
+      text-align: center;
+    }
+
+    td:nth-child(1) {
+      max-width: 150px; // para tabelas
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    td:nth-child(3) {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      img {
+        width: 40px;
+        height: 32px;
+      }
+    }
+
+    td:nth-child(4) {
+      button {
+        margin-right: 8px;
+      }
+    }
+
+    td:nth-child(6) {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    td:nth-child(7) {
+      max-width: 300px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    td:nth-child(8) {
+      display: flex;
+      justify-content: space-around;
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        background: linear-gradient(to right, #16b468, #cec32d);
+      }
+    }
+  }
+}
+
+// para media queries - text-overflow: ellipsis
+// table {width: 100%;}
+// td
+// {
+//  max-width: 0;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//  white-space: nowrap;
+// }
+// td.column_a {width: 30%;}
+// td.column_b {width: 70%;}
+
+@media (max-width: 905px) {
+  #product {
+    .actions {
+      flex-direction: column;
+      margin-top: 32px;
+
+      input {
+        margin-top: 16px;
+      }
+    }
+
+    main {
+      table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+      }
+
+      table tr {
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 0.35em;
+      }
+
+      td:nth-child(1) {
+        max-width: initial;
+      }
+
+      td:nth-child(3) {
+        text-align: right;
+      }
+
+      td:nth-child(4) {
+        text-align: right;
+      }
+
+      // td:nth-child(8) {
+      //   justify-content: center;
+
+      //   button:nth-child(1) {
+      //     // margin-right: 8px;
+      //   }
+      // }
+
+      table th,
+      table td {
+        padding: 0.625em;
+        text-align: center;
+      }
+
+      table th {
+        font-size: 0.85em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      main {
+        .table-scroll {
+          max-height: 410px;
+        }
+      }
+
+      @media (max-width: 905px) {
+        table {
+          border: 0;
+        }
+
+        table thead {
+          border: none;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          margin: -1px;
+          overflow: hidden;
+          padding: 0;
+          position: absolute;
+          width: 1px;
+        }
+
+        table tr {
+          border-bottom: 3px solid #ddd;
+          display: block;
+          margin-bottom: 0.625em;
+        }
+
+        table td {
+          border-bottom: 1px solid #ddd;
+          display: block;
+          font-size: 0.8em;
+          text-align: right;
+        }
+
+        table td::before {
+          /*
+        * aria-label has no advantage, it won't be read inside a table
+        content: attr(aria-label);
+        */
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin-right: 8px;
+        }
+
+        table td:last-child {
+          justify-content: center;
+          margin: 0;
+
+          button:first-child {
+            margin-right: 16px;
+          }
+        }
+      }
+    }
+  }
+}

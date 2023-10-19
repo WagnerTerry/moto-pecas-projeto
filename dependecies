@@ -1,0 +1,17 @@
+# Dependencies
+
+--------------------Frontend
+
+- npm install react-router-dom --save
+- npm install --save @types/react-router-dom
+- npm i sass
+- npm i axios
+- npm i react-toastify
+- npm install react-hook-form
+- npm install @hookform/resolvers yup
+- npm i react-loading
+- npm install react-icons --save
+- npm i jspdf
+
+- tarefas
+ - responsividade tabela
